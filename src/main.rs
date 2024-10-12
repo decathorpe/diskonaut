@@ -192,7 +192,7 @@ pub fn start<B>(
                 move || {
                     'scanning: for entry in WalkDir::new(&path)
                         .parallelism(if SHOULD_SCAN_HD_FILES_IN_MULTIPLE_THREADS {
-                            RayonDefaultPool
+                            RayonDefaultPool { busy_timeout: std::time::Duration::from_secs(1) }
                         } else {
                             Serial
                         })
