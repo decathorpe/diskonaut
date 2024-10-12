@@ -149,14 +149,17 @@ pub fn start<B>(
                         if let BackEvent::Key(KeyEvent {
                             code: KeyCode::Char('y'),
                             modifiers: KeyModifiers::NONE,
+                            ..
                         })
                         | BackEvent::Key(KeyEvent {
                             code: KeyCode::Char('q'),
                             modifiers: KeyModifiers::NONE,
+                            ..
                         })
                         | BackEvent::Key(KeyEvent {
                             code: KeyCode::Char('c'),
                             modifiers: KeyModifiers::CONTROL,
+                            ..
                         }) = evt
                         {
                             // not ideal, but works in a pinch
